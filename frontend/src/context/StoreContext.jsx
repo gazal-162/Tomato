@@ -15,19 +15,17 @@ const url = import.meta.env.VITE_API_URL;
 
   // Fetch Food List
 const fetchFoodList = async () => {
-  try {
-    const response = await axios.get(`${url}/api/food/list`);
+    try {
+        const response = await axios.get(url + "/api/food/list");
 
-    console.log("Full Response:", response.data);
-    console.log("Food Array:", response.data.data);
-    console.log("Number of Foods:", response.data.data.length);
+        console.log("Full Response:", response.data);
+        console.log("Food Array:", response.data.data);
 
-    if (response.data.success) {
-      setFoodList(response.data.data);
+        setFoodList(response.data.data);
+
+    } catch (error) {
+        console.log(error);
     }
-  } catch (error) {
-    console.log(error);
-  }
 };
   // Load Cart From Database
   const loadCartData = async () => {
