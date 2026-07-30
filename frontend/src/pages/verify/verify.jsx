@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Verify.css";
+import "./verify.css";
 
-const Verify = () => {
+const verify = () => {
   return (
     <div className="verify">
       <div className="verify-container">
@@ -30,4 +30,4 @@ const Verify = () => {
   );
 };
 
-export default Verify;
+export default verify;
