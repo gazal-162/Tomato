@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import { Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-
+import Login from "./pages/Login/Login";
 import Add from "./pages/Add/Add";
 import List from "./pages/List/List";
 import Orders from "./pages/Orders/Orders";
@@ -30,6 +30,8 @@ const url = import.meta.env.VITE_API_URL;
         <Sidebar />
 
         <Routes>
+   <Route path="/" element={<Navigate to="/add" />} />
+
           <Route path="/add" element={<Add url={url} />} />
           <Route path="/list" element={<List url={url} />} />
           <Route path="/orders" element={<Orders url={url} />} />
