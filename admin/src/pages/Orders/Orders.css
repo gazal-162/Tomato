@@ -1,0 +1,193 @@
+.orders {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    background: #f7f8fc;
+}
+
+.orders h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    transition: .3s;
+}
+
+.order-item:hover{
+    transform: translateY(-4px);
+}
+
+.order-left{
+    flex:1;
+}
+
+.order-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.order-icon{
+    font-size:34px;
+}
+
+.order-header h3{
+    color:tomato;
+    font-size:24px;
+}
+
+.order-items{
+    background:#fafafa;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.order-items strong{
+    display:block;
+    margin-bottom:10px;
+    color:#333;
+}
+
+.order-items p{
+    margin:6px 0;
+}
+
+.order-left p{
+    margin:10px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+.order-left strong{
+    color:#222;
+}
+
+.order-right{
+    display:flex;
+    align-items:center;
+}
+
+.order-right select{
+    width:220px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+/* Status Colors */
+
+.status.Food-Processing select{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.status.Out-for-Delivery select{
+    background:#cfe2ff;
+    color:#084298;
+}
+
+.status.Delivered select{
+    background:#d1e7dd;
+    color:#146c43;
+}
+.order-icon{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    margin-top:10px;
+}
+
+.order-item{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+}
+
+.order-left{
+    flex:1;
+}
+
+.order-items{
+    margin:15px 0;
+    padding:12px;
+    background:#fafafa;
+    border-radius:8px;
+}
+
+.order-items p{
+    margin:5px 0;
+}
+
+.order-left p{
+    margin:8px 0;
+}
+
+.order-right{
+    display:flex;
+    align-items:center;
+}
+
+.order-right select{
+    width:190px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .order-item{
+        flex-direction:column;
+    }
+
+    .order-right{
+        width:100%;
+    }
+
+    .order-right select{
+        width:100%;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .orders{
+        padding:15px;
+    }
+
+    .order-item{
+        padding:18px;
+    }
+
+    .order-header h3{
+        font-size:20px;
+    }
+
+}
