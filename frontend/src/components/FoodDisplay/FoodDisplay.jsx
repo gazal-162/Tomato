@@ -5,15 +5,18 @@ import FoodItem from "../FoodItem/FoodItem";
 
 const FoodDisplay = ({ category }) => {
 
-  const { food_list } = useContext(StoreContext);
+  const { food_list = [] } = useContext(StoreContext);
 
-console.log("Food List:", food_list);
-console.log("Length:", food_list.length);
+  console.log("Food List:", food_list);
+  console.log("Length:", food_list.length);
+
   return (
     <div className="food-display" id="food-display">
+
       <h2>Top dishes near you</h2>
 
       <div className="food-display-list">
+
         {food_list.map((item, index) => (
           <FoodItem
             key={index}
@@ -24,7 +27,9 @@ console.log("Length:", food_list.length);
             image={item.image}
           />
         ))}
+
       </div>
+
     </div>
   );
 };

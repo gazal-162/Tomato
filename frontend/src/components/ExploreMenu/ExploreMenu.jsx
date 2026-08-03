@@ -3,6 +3,17 @@ import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
 
 const ExploreMenu = ({ category, setCategory }) => {
+
+  const handleCategoryClick = (menuName) => {
+    setCategory((prev) =>
+      prev === menuName ? "All" : menuName
+    );
+
+    document
+      .getElementById("food-display")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="explore-menu" id="explore-menu">
       <h1>Explore our menu</h1>
@@ -18,17 +29,14 @@ const ExploreMenu = ({ category, setCategory }) => {
           <div
             key={index}
             className="explore-menu-list-item"
-            onClick={() =>
-              setCategory((prev) =>
-                prev === item.menu_name ? "All" : item.menu_name
-              )
-            }
+            onClick={() => handleCategoryClick(item.menu_name)}
           >
             <img
               className={category === item.menu_name ? "active" : ""}
               src={item.menu_image}
               alt={item.menu_name}
             />
+
             <p>{item.menu_name}</p>
           </div>
         ))}
