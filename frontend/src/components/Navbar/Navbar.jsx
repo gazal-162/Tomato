@@ -82,18 +82,14 @@ const Navbar = ({ setShowLogin }) => {
         <img src={assets.search_icon} alt="Search" />
 
         <div className="navbar-search-icon">
-          <Link to="/cart">
-            <img src={assets.basket_icon} alt="Basket" />
-          </Link>
+  <Link to="/cart">
+    <img src={assets.basket_icon} alt="Basket" />
+  </Link>
 
-          {getTotalCartAmount() > 0 && (
-            <span className="cart-count">
-              {Object.values(
-                JSON.parse(localStorage.getItem("cartItems") || "{}"),
-              ).reduce((a, b) => a + b, 0)}
-            </span>
-          )}
-        </div>
+  {getTotalCartAmount() > 0 && (
+    <div className="cart-dot"></div>
+  )}
+</div>
 
         {!token ? (
           <button onClick={() => setShowLogin(true)}>Sign In</button>

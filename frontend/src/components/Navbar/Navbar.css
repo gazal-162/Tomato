@@ -50,9 +50,7 @@ transition: 0.3s;
     color: #1F3A2E;
     font-weight: 600;
 }
-.navbar-search-icon{
-    position: relative;
-}
+
 .navbar-search-icon .dot{
     position: absolute;
     min-width: 10px;
@@ -143,6 +141,19 @@ transition: 0.3s;
 
 .nav-profile-dropdown hr{
     margin:6px 0;
+}
+.navbar-search-icon {
+    position: relative;
+}
+
+.cart-dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    top: -4px;
+    right: -4px;
 }
 @media (max-width:1050px) {
     .navbar .logo{

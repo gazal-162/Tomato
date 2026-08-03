@@ -13,3 +13,13 @@
     gap: 30px;
     row-gap:50px ;
 }
+.food-category-section {
+  margin-top: 40px;
+}
+
+.food-category-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #262626;
+}

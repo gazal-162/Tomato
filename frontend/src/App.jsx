@@ -9,7 +9,7 @@ import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Verify from "./pages/verify/verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 const App = () => {
-  const [showLogin, setShowLogin] = useState(false);
+ const [category, setCategory] = useState("All");
 
   return (
     <>
@@ -25,7 +25,15 @@ const App = () => {
         />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+<Route 
+  path="/" 
+  element={
+    <Home 
+      category={category}
+      setCategory={setCategory}
+    />
+  } 
+/>
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
           {/* <Route path="/order" element={<PlaceOrder />} /> */}
