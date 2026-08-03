@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
-
-const Cart = () => {
+const Cart = ({ setShowLogin }) => {
 const url = import.meta.env.VITE_API_URL;
-
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
-    useContext(StoreContext);
+const {
+  cartItems,
+  food_list,
+  removeFromCart,
+  getTotalCartAmount,
+  token,
+} = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -75,12 +78,19 @@ const url = import.meta.env.VITE_API_URL;
             <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
           </div>
 
-          <button
-            disabled={getTotalCartAmount() === 0}
-            onClick={() => navigate("/order")}
-          >
-            PROCEED TO CHECKOUT
-          </button>
+         <button
+  disabled={getTotalCartAmount() === 0}
+  onClick={() => {
+    if (!token) {
+      setShowLogin(true);
+      return;
+    }
+
+    navigate("/order");
+  }}
+>
+  PROCEED TO CHECKOUT
+</button>
         </div>
 
         <div className="cart-promocode">

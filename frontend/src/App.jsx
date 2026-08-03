@@ -8,36 +8,44 @@ import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Verify from "./pages/verify/verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
+
 const App = () => {
- const [category, setCategory] = useState("All");
+  const [showLogin, setShowLogin] = useState(false);
+  const [category, setCategory] = useState("All");
 
   return (
     <>
       {showLogin && (
-        <LoginPopup
-          setShowLogin={setShowLogin}
-        />
+        <LoginPopup setShowLogin={setShowLogin} />
       )}
 
       <div className="app">
-        <Navbar
-          setShowLogin={setShowLogin}
-        />
+        <Navbar setShowLogin={setShowLogin} />
 
         <Routes>
-<Route 
-  path="/" 
-  element={
-    <Home 
-      category={category}
-      setCategory={setCategory}
-    />
-  } 
-/>
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                category={category}
+                setCategory={setCategory}
+              />
+            }
+          />
+
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                setShowLogin={setShowLogin}
+              />
+            }
+          />
+
           <Route path="/order" element={<PlaceOrder />} />
-          {/* <Route path="/order" element={<PlaceOrder />} /> */}
-<Route path="/verify" element={<Verify />} />
+
+          <Route path="/verify" element={<Verify />} />
+
           <Route path="/myorders" element={<MyOrders />} />
         </Routes>
       </div>
